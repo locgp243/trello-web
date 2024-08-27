@@ -1,6 +1,5 @@
-import { createTheme } from '@mui/material/styles'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
-import { deepOrange, orange, teal, cyan} from '@mui/material/colors'
+import { deepOrange, orange, teal, cyan } from '@mui/material/colors'
 
 // Create a theme instance.
 const theme = extendTheme({
