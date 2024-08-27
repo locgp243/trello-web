@@ -1,9 +1,10 @@
 import { AccessAlarm, ThreeDRotation } from '@mui/icons-material'
+import Typography from '@mui/material/Typography'
 
 function App() {
   return (
     <>
-      <h1>Gia Lộc Dev</h1>
+      <Typography variant="body2" color="text.secondary">Gia Lộc Dev</Typography>
       <AccessAlarm />
       <ThreeDRotation color="disabled" />
     </>
