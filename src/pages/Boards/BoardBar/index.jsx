@@ -1,15 +1,104 @@
 import Box from '@mui/material/Box'
+import Chip from '@mui/material/Chip'
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
+import VpnLockIcon from '@mui/icons-material/VpnLock'
+import AddToDriveIcon from '@mui/icons-material/AddToDrive'
+import BoltIcon from '@mui/icons-material/Bolt'
+import FilterAltIcon from '@mui/icons-material/FilterAlt'
+import Avatar from '@mui/material/Avatar'
+import AvatarGroup from '@mui/material/AvatarGroup'
+import Tooltip from '@mui/material/Tooltip'
+import Button from '@mui/material/Button'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
+
+const MENU_STYLES = {
+  color: 'primary.main',
+  bgcolor: 'white',
+  border: 'none',
+  paddingX: '5px',
+  borderRadius: '4px',
+  '& .MuiSvgIcon-root': {
+    color: 'primary.main'
+  },
+  '&:hover': {
+    bgcolor: 'primary.50'
+  }
+}
 
 function BoardBar() {
   return (
     <Box sx={{
-      backgroundColor: 'primary.dark',
       height: (theme) => theme.trello.boardBarHeight,
       width: '100%',
+      paddingX: 2,
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 2,
+      overflowX: 'auto',
+      borderTop: '1px solid #00bfa5'
     }}>
-        Broad bar
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Chip
+          sx={MENU_STYLES}
+          icon={<SpaceDashboardIcon />}
+          label="GiaLocDev MERN Stack"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<VpnLockIcon />}
+          label="Public/Private Workspace"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<AddToDriveIcon />}
+          label="Add to Google Drive"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<BoltIcon />}
+          label="Automation"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLES}
+          icon={<FilterAltIcon />}
+          label="Filter"
+          clickable
+        />
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Button sx={{ lineHeight: '1.5px' }} variant="outlined" size='small' startIcon={<PersonAddIcon />}>Invite</Button>
+        <AvatarGroup
+          max={4}
+          sx={{
+            '& .MuiAvatar-root': {
+              width: 34,
+              height: 34,
+              fontSize: 16
+            }
+          }}
+        >
+          <Tooltip title="GiaLocDev">
+            <Avatar alt="GiaLocDev" src="https://avatars.githubusercontent.com/u/179283516?v=4" />
+          </Tooltip>
+          <Tooltip title="Marina Shiraishi">
+            <Avatar alt="Marina Shiraishi" src="https://javhat.tv/media/videos/tmb/000/196/253/1.jpg" />
+          </Tooltip>
+          <Tooltip title="Ai Uehara">
+            <Avatar alt="Ai Uehara" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe-4pOH8q8wfdaolWrfDCqXR3JbD1b0LBnhQ&s" />
+          </Tooltip>
+          <Tooltip title="GiaLocDev">
+            <Avatar alt="GiaLocDev" src="https://avatars.githubusercontent.com/u/179283516?v=4" />
+          </Tooltip>
+          <Tooltip title="GiaLocDev">
+            <Avatar alt="GiaLocDev" src="https://avatars.githubusercontent.com/u/179283516?v=4" />
+          </Tooltip>
+        </AvatarGroup>
+      </Box>
     </Box>
   )
 }
