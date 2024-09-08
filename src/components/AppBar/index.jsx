@@ -34,7 +34,10 @@ function AppBar() {
       justifyContent: 'space-between',
       gap: 2,
       overflowX: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#1d2125' : '#08479E')
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#1d2125' : '#08479E'),
+      '&::-webkit-scrollbar-track': {
+        m: 2
+      }
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color: 'white' }} />
