@@ -9,7 +9,8 @@ import {
   useSensor,
   useSensors,
   DragOverlay,
-  defaultDropAnimationSideEffects
+  defaultDropAnimationSideEffects,
+  closestCorners
 } from '@dnd-kit/core'
 import { useEffect, useState } from 'react'
 import { arrayMove } from '@dnd-kit/sortable'
@@ -194,6 +195,9 @@ function BoardContent({ board }) {
   return (
     <DndContext
       sensors={sensors}
+      // Thuật toán phát hiện va chạm
+      // https://docs.dndkit.com/api-documentation/context-provider/collision-detection-algorithms
+      collisionDetection={closestCorners}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
