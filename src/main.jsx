@@ -11,6 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <CssVarsProvider theme={theme}>
     <CssBaseline />
     < App />
-  </CssVarsProvider>
+  </CssVarsProvider>  
   // </React.StrictMode>
 )
